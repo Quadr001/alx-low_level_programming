@@ -8,25 +8,13 @@
  */
 int main(void)
 {
-int count;
-unsigned long fib1 = 0, fib2 = 1, sum;
-
-for (count = 0; count < 50; count++)
+int i, sum;
+sum = 0;
+for (i = 0; i < 1024; i++)
 {
-sum = fib1 + fib2;
-
-if (count < 49)
-{
-printf("%lu, ", sum);
+if (i % 3 == 0 || i % 5 == 0)
+sum += i;
 }
-else
-{
-printf("%lu\n", sum);
-}
-
-fib1 = fib2;
-fib2 = sum;
-}
-
+printf("%d\n", sum);
 return (0);
 }
