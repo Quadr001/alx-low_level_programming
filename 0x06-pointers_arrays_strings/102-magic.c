@@ -13,11 +13,10 @@ int *p;
 p = &a[2];
 
 /* Add your code below this line */
-printf("a[2] = %d\n", *(p + 0));
+*(p + 0) = 98;  /* New line of code */
 /* Add your code above this line */
 
-a[2] = 98;
+printf("a[2] = %d\n", a[2]);
 	
-printf("%d\n", a[2]);
-return (0);
+return 0;
 }
