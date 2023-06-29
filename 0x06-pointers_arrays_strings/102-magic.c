@@ -14,11 +14,11 @@ a[2] = 1024;
 p = &n;
 
 /*
-Your line of code
+*Your line of code
 */
 *(p + 5) = 98;
 
 printf("a[2] = %d\n", *(int *)((char *)p + 20)); /* Print the value of a[2] */
 
-return 0;
+return (0);
 }
