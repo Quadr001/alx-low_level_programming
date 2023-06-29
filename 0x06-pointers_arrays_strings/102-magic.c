@@ -12,7 +12,7 @@ int main(void)
 
     
 /* Add your code below this line */
-*(p + (sizeof(n) / sizeof(*p)) + 1) = 98;
+*(p + 20) = 98;
 /* Add your code above this line */
 
    
