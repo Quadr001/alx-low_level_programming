@@ -24,5 +24,5 @@ break;
 }
 current = current->next;
 }
-return count;
+return (count);
 }
