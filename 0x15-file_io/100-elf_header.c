@@ -1,3 +1,7 @@
+/*
+* @Abdulquadr
+*/
+
 #include <elf.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -9,7 +13,6 @@
  * @s1: the first string
  * @s2: the second string
  * @n: the max number of bytes to compare
- *
  * Return: 0 if the first n bytes of s1 and s2 are equal, otherwise non-zero
  */
 int _strncmp(const char *s1, const char *s2, size_t n)
@@ -79,7 +82,6 @@ void elf_magic(const unsigned char *buffer)
 /**
  * elf_class - print ELF class
  * @buffer: the ELF header
- *
  * Return: bit mode (32 or 64)
  */
 size_t elf_class(const unsigned char *buffer)
@@ -103,7 +105,6 @@ size_t elf_class(const unsigned char *buffer)
 /**
  * elf_data - print ELF data
  * @buffer: the ELF header
- *
  * Return: 1 if big endian, otherwise 0
  */
 int elf_data(const unsigned char *buffer)
@@ -258,7 +259,6 @@ void elf_entry(const unsigned char *buffer, size_t bit_mode, int big_endian)
  * main - copy a file's contents to another file
  * @argc: the argument count
  * @argv: the argument values
- *
  * Return: Always 0
  */
 int main(int argc, const char *argv[])
