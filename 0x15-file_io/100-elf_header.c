@@ -54,7 +54,7 @@ void _read(int fd, char *buf, size_t count)
 {
 if (read(fd, buf, count) != -1)
 return;
-write(STDERR_FILENO, "Error: Can't read from file\n", 28);        
+write(STDERR_FILENO, "Error: Can't read from file\n", 28);
 _close(fd);
 exit(98);
 }
@@ -246,7 +246,7 @@ while (address_size && !*(--buffer))
 printf("%x", *buffer & 0xff);
 
 while (--address_size > 0)
-printf("%02x", *(--buffer) & 0xff);
+printf("%02x", *(--buffer) &0xff);
 }
 
 printf("\n");
