@@ -54,7 +54,7 @@ void _read(int fd, char *buf, size_t count)
 {
 if (read(fd, buf, count) != -1)
 return;
-write(STDERR_FILENO, "Error: Can't read from file\n", 28);        
+write(STDERR_FILENO, "Error: Can't read from file\n", 28);
 _close(fd);
 exit(98);
 }
@@ -107,7 +107,7 @@ return (32);
 */
 int elf_data(const unsigned char *buffer)
 {
-printf("  %-34s ", "Data:");
+printf("%-34s", "Data:");
 
 if (buffer[EI_DATA] == ELFDATA2MSB)
 {
@@ -129,7 +129,7 @@ return (0);
 */
 void elf_version(const unsigned char *buffer)
 {
-printf("  %-34s %u", "Version:", buffer[EI_VERSION]);
+printf("%-34s %u", "Version:", buffer[EI_VERSION]);
 
 if (buffer[EI_VERSION] == EV_CURRENT)
 printf(" (current)\n");
@@ -165,7 +165,7 @@ const char *os_table[19] = {
 "Stratus Technologies OpenVOS"
 };
 
-printf("  %-34s ", "OS/ABI:");
+printf("%-34s", "OS/ABI:");
 
 if (buffer[EI_OSABI] < 19)
 printf("%s\n", os_table[(unsigned int) buffer[EI_OSABI]]);
@@ -179,7 +179,7 @@ printf("<unknown: %x>\n", buffer[EI_OSABI]);
  */
 void elf_abivers(const unsigned char *buffer)
 {
-printf("  %-34s %u\n", "ABI Version:", buffer[EI_ABIVERSION]);
+printf("%-34s %u\n", "ABI Version:", buffer[EI_ABIVERSION]);
 }
 
 /**
@@ -198,7 +198,7 @@ char *type_table[5] = {
 };
 unsigned int type;
 
-printf("  %-34s ", "Type:");
+printf("%-34s", "Type:");
 
 if (big_endian)
 type = 0x100 * buffer[16] + buffer[17];
@@ -224,7 +224,7 @@ void elf_entry(const unsigned char *buffer, size_t bit_mode, int big_endian)
 {
 int address_size = bit_mode / 8;
 
-printf("  %-34s 0x", "Entry point address:");
+printf("%-34s 0x", "Entry point address:");
 
 if (big_endian)
 {
@@ -246,7 +246,7 @@ while (address_size && !*(--buffer))
 printf("%x", *buffer & 0xff);
 
 while (--address_size > 0)
-printf("%02x", *(--buffer) & 0xff);
+printf("%02x", *(--buffer) &0xff);
 }
 
 printf("\n");
